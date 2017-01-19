@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Slideshow</title>
+	<style type="text/css">
+
+	body{
+		background-image: url("catsbackground.jpg");
+	}
+
+	.top-banner{width: 100%
+		height:100%;
+		background-color:gold;
+		text-align: center;}
+
+		.cats{ height: 50%;
+		width:50%; }
+		.forward-button { float: right;
+		 }
+		.back-button { float: left; 
+		}
+		.button{ position: absolute; }
+
+	</style>
+	
+</head>
+
+<div class="top-banner">
+	<h1>Cute lil cats slide show</h1>
+</div>
+<body>
+	<center><div class="slide-show">
+	<img class="cats" src="cats1.jpg">
+	<img class="cats" src="cats2.jpg">
+	<img class="cats" src="cats3.jpg">
+	<img class="cats" src="cats4.jpg">
+	<img class="cats" src="cats5.jpg"></div></center>
+
+	<center><div class="button"></div><button class="back-button" onclick="plusDivs(-1)">&#10094;</button>
+	<button class="forward-button" onclick="plusDivs(+1)">&#10095;</button></div></center>
+	</div>
+
+	<script type="text/javascript">
+	var slideIndex=1;
+	showDivs(slideIndex);
+
+	function plusDivs(n){
+		showDivs(slideIndex+=n);
+	}
+	function showDivs(n){
+		var i;
+		var x=document.getElementsByClassName("cats");
+		if(n>x.length){slideIndex=1}
+		if(n<1){slideIndex=x.length}
+		for(i=0;i<x.length;i++){
+			x[i].style.display="none";
+        }
+			x[slideIndex-1].style.display="block";
+	}
+		
+
+	</script>
+	
+</body>
+</html>
